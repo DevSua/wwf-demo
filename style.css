@@ -7,6 +7,9 @@
 ul {
   list-style: none;
 }
+img {
+  display: block;
+}
 header {
   width: 100%;
   position: fixed;
@@ -15,34 +18,38 @@ header {
 header > .inner {
   height: 120px;
 }
-header .left {
-  position: relative;
-  width: 350px;
-}
+
 header .logo {
-  width: 120px;
   position: absolute;
   top: 0; /*부모의 시작점 끝점을 기준으로 외부여백 자동계산*/
   bottom: 0;
   left: 0;
   right: 0; /*왼쪽과 오른쪽에 딱붙*/
+  margin: auto;
 }
+.inner .left {
+  position: relative;
+  width: 380px;
+}
+
 .left .search {
-  height: 120px;
   display: flex;
-  align-items: center;
+  height: 120px;
   justify-content: flex-end;
+  align-items: center; /*수직 정렬*/
 }
 header .material-icons {
   color: beige;
 }
-header .right {
-}
-.right .menu {
-  display: flex;
-  top: 10px;
-  right: 0;
+.inner .right {
   position: absolute;
+  width: 50px;
+  height: 50px;
+}
+header .menu {
+  display: flex;
+  position: absolute;
+  top: 0;
 }
 header .menu .item {
 }
