@@ -27,6 +27,7 @@ header .logo {
   right: 0; /*왼쪽과 오른쪽에 딱붙*/
   margin: auto;
 }
+
 .inner .left {
   position: relative;
   width: 380px;
