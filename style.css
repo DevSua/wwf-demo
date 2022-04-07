@@ -1,0 +1,53 @@
+.inner {
+  width: 1100px;
+  margin: 0 auto; /*가운데정렬*/
+  position: relative;
+  background-color: red;
+}
+ul {
+  list-style: none;
+}
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+header > .inner {
+  height: 120px;
+}
+header .left {
+  position: relative;
+  width: 350px;
+}
+header .logo {
+  width: 120px;
+  position: absolute;
+  top: 0; /*부모의 시작점 끝점을 기준으로 외부여백 자동계산*/
+  bottom: 0;
+  left: 0;
+  right: 0; /*왼쪽과 오른쪽에 딱붙*/
+}
+.left .search {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+header .material-icons {
+  color: beige;
+}
+header .right {
+}
+.right .menu {
+  display: flex;
+  top: 10px;
+  right: 0;
+  position: absolute;
+}
+header .menu .item {
+}
+header .menu .item .item_name {
+  padding: 20px;
+}
+header .menu .item .content {
+}
