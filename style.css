@@ -1,8 +1,16 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+.bodywrap {
+  max-height: 100%;
+  max-width: 1024px;
+}
 .inner {
-  width: 1100px;
-  margin: 0 auto; /*가운데정렬*/
+  width: 1500px;
   position: relative;
-  background-color: red;
 }
 ul {
   list-style: none;
@@ -10,52 +18,101 @@ ul {
 img {
   display: block;
 }
-header {
+nav {
   width: 100%;
   position: fixed;
   top: 0;
 }
-header > .inner {
-  height: 120px;
+nav > .inner {
+  height: 80px;
 }
-
-header .logo {
+/*버튼 그룹*/
+.btn {
+  background-color: #f39643;
+  border-radius: 4px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.btn.btn2 {
+  background-color: #f37043;
+  border-radius: 4px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.inner .left {
+  position: relative;
+}
+nav .left .logo {
   position: absolute;
   top: 0; /*부모의 시작점 끝점을 기준으로 외부여백 자동계산*/
   bottom: 0;
-  left: 0;
-  right: 0; /*왼쪽과 오른쪽에 딱붙*/
+  left: 100px;
+  /*왼쪽과 오른쪽에 딱붙*/
   margin: auto;
 }
 
-.inner .left {
+/*오른쪽 메뉴*/
+
+nav .inner .menu {
   position: relative;
-  width: 380px;
+  display: flex;
+  color: white;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav .menu .item {
+}
+nav .menu .item .item_name {
+  padding: 30px 24px 34px 20px;
+}
+nav .menu .item:hover .item_name {
+  background-color: #f39643;
 }
 
-.left .search {
-  display: flex;
-  height: 120px;
-  justify-content: flex-end;
-  align-items: center; /*수직 정렬*/
+nav .menu .item .btn {
+  padding: 15px 24px 15px;
+  margin: 10px 10px 10px 10px; /*margin이 없으면 버튼들끼리 딱달라붙음 evernote정리하기*/
 }
-header .material-icons {
-  color: beige;
+nav .menu .item .btn:hover {
+  background-color: #f37043;
 }
-.inner .right {
+nav .menu .item .btn.btn2 {
+  position: relative;
+  padding: 15px 24px 15px;
+}
+nav .menu .item .btn.btn2:hover {
+  background-color: #f37043;
+}
+/* 메뉴 드롭박스 class 를바꿔가며 어찌저찌 하긴했지만
+연습이 많이 필요하다*/
+.item {
+  position: relative;
+}
+nav ul li {
+  display: inline-block;
+}
+
+.btn .content {
+  display: block;
+}
+.content {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  display: none;
 }
-header .menu {
-  display: flex;
-  position: absolute;
-  top: 0;
+.content li {
+  display: block;
+  color: white;
 }
-header .menu .item {
+
+.item:hover .content {
+  display: block;
 }
-header .menu .item .item_name {
-  padding: 20px;
+/*목록태그들 hover했을때 색상*/
+.item:hover li {
+  background-color: #f39643;
 }
-header .menu .item .content {
+.item li:hover {
+  background-color: #f39643;
+  color: black;
+  transition: 0.5s;
 }
