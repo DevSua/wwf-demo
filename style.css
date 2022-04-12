@@ -1,15 +1,20 @@
 body {
+  display: flex;
   font-family: "Open Sans", sans-serif;
+}
+nav {
+  /* position: relative; */
+  /* height: 100vh;
+  background: url(./img/banner1.jpg) no-repeat center;
+  background: url(./img/banner2.jpg) no-repeat center;
+  background-size: cover; */
 }
 a {
   text-decoration: none;
 }
-.bodywrap {
-  max-height: 100%;
-  max-width: 1024px;
-}
+
 .inner {
-  width: 1500px;
+  width: 2000px;
   position: relative;
 }
 ul {
@@ -32,12 +37,14 @@ nav > .inner {
   border-radius: 4px;
   text-align: center;
   box-sizing: border-box;
+  position: relative;
 }
 .btn.btn2 {
   background-color: #f37043;
   border-radius: 4px;
   text-align: center;
   box-sizing: border-box;
+  position: relative;
 }
 .inner .left {
   position: relative;
@@ -89,21 +96,28 @@ nav .menu .item .btn.btn2:hover {
   position: relative;
 }
 nav ul li {
-  display: inline-block;
-}
-
-.btn .content {
   display: block;
 }
+
 .content {
   position: absolute;
   display: none;
 }
 .content li {
   display: block;
+  width: 350px;
+  /* padding: 20px 150px 15px 20px; */
   color: white;
 }
-
+.btn .content {
+  position: absolute;
+}
+.btn .content > ul {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  background-color: blue;
+}
 .item:hover .content {
   display: block;
 }
@@ -115,4 +129,20 @@ nav ul li {
   background-color: #f39643;
   color: black;
   transition: 0.5s;
+}
+/*BACKGROUND IMAGE */
+.swiper-container .swiper-slide {
+  /* position: relative; 
+  height: 100vh;
+  background-size: cover; */
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #f39643;
+}
+.swiper-button-next {
+  right: 50px;
+}
+.swiper-button-prev {
+  left: 50px;
 }
