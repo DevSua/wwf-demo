@@ -1,14 +1,7 @@
 body {
-  display: flex;
   font-family: "Open Sans", sans-serif;
 }
-nav {
-  /* position: relative; */
-  /* height: 100vh;
-  background: url(./img/banner1.jpg) no-repeat center;
-  background: url(./img/banner2.jpg) no-repeat center;
-  background-size: cover; */
-}
+
 a {
   text-decoration: none;
 }
@@ -16,6 +9,7 @@ a {
 .inner {
   width: 2000px;
   position: relative;
+  margin: 0 auto;
 }
 ul {
   list-style: none;
@@ -27,6 +21,8 @@ nav {
   width: 100%;
   position: fixed;
   top: 0;
+  display: flex;
+  align-items: center;
 }
 nav > .inner {
   height: 80px;
@@ -67,8 +63,6 @@ nav .inner .menu {
   justify-content: flex-end;
   align-items: center;
 }
-nav .menu .item {
-}
 nav .menu .item .item_name {
   padding: 30px 24px 34px 20px;
 }
@@ -93,6 +87,7 @@ nav .menu .item .btn.btn2:hover {
 /* 메뉴 드롭박스 class 를바꿔가며 어찌저찌 하긴했지만
 연습이 많이 필요하다*/
 .item {
+  cursor: pointer;
   position: relative;
 }
 nav ul li {
@@ -106,7 +101,7 @@ nav ul li {
 .content li {
   display: block;
   width: 350px;
-  /* padding: 20px 150px 15px 20px; */
+  padding: 20px 80px 15px 20px;
   color: white;
 }
 .btn .content {
@@ -116,7 +111,6 @@ nav ul li {
   position: absolute;
   display: flex;
   justify-content: flex-end;
-  background-color: blue;
 }
 .item:hover .content {
   display: block;
@@ -131,14 +125,28 @@ nav ul li {
   transition: 0.5s;
 }
 /*BACKGROUND IMAGE */
-.swiper-container .swiper-slide {
-  /* position: relative; 
-  height: 100vh;
-  background-size: cover; */
+
+.swiper-container {
+  display: relative;
+
+  overflow: hidden; /*다음 이미지 숨김 */
 }
-.swiper-button-next,
-.swiper-button-prev {
+
+.swiper-wrapper {
+  position: relative;
+  z-index: -1; /*이미지가 밑에 깔려야 nav의 버튼들이 보임
+  constainer에 index를 줄 시 페이징 버튼까지 밑에깔려서 작동하지않음.*/
+}
+.swiper-container .swiper-slide > img {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover; /*img가 inline속성이기때문에 block으로 변경. 사이즈를 컴퓨터 크기에맞게 꽉 채워주기 */
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
   color: #f39643;
+  font-size: 100px;
 }
 .swiper-button-next {
   right: 50px;
