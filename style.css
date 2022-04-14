@@ -61,7 +61,6 @@ nav .inner .menu {
   display: flex;
   color: white;
   justify-content: flex-end;
-  align-items: center;
 }
 nav .menu .item .item_name {
   padding: 30px 24px 34px 20px;
@@ -90,31 +89,20 @@ nav .menu .item .btn.btn2:hover {
   cursor: pointer;
   position: relative;
 }
-nav ul li {
-  display: block;
-}
 
 .content {
   position: absolute;
   display: none;
 }
 .content li {
-  display: block;
-  width: 350px;
+  width: 280px;
   padding: 20px 80px 15px 20px;
   color: white;
 }
-.btn .content {
-  position: absolute;
-}
-.btn .content > ul {
-  position: absolute;
-  display: flex;
-  justify-content: flex-end;
-}
 .item:hover .content {
-  display: block;
+  display: block; /*none된것을 보이게함 꼭 써줘야함*/
 }
+
 /*목록태그들 hover했을때 색상*/
 .item:hover li {
   background-color: #f39643;
