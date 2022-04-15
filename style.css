@@ -1,5 +1,5 @@
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "WWFRegular", sans-serif;
 }
 
 a {
@@ -7,7 +7,7 @@ a {
 }
 
 .inner {
-  width: 2000px;
+  width: 1700px;
   position: relative;
   margin: 0 auto;
 }
@@ -23,10 +23,12 @@ nav {
   top: 0;
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 nav > .inner {
   height: 80px;
 }
+
 /*버튼 그룹*/
 .btn {
   background-color: #f39643;
@@ -41,6 +43,15 @@ nav > .inner {
   text-align: center;
   box-sizing: border-box;
   position: relative;
+  padding: 15px 24px 15px;
+  color: #fff;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #f37043;
+}
+.btn.btn2:hover {
+  background-color: #f37043;
 }
 .inner .left {
   position: relative;
@@ -48,15 +59,20 @@ nav > .inner {
 nav .left .logo {
   position: absolute;
   top: 0; /*부모의 시작점 끝점을 기준으로 외부여백 자동계산*/
+  left: 0;
   bottom: 0;
-  left: 100px;
+
   /*왼쪽과 오른쪽에 딱붙*/
   margin: auto;
+}
+.logo img {
+  width: 130px;
 }
 
 /*오른쪽 메뉴*/
 
 nav .inner .menu {
+  letter-spacing: -1px; /*글자끼리 딱달라붙게*/
   position: relative;
   display: flex;
   color: white;
@@ -73,19 +89,15 @@ nav .menu .item .btn {
   padding: 15px 24px 15px;
   margin: 10px 10px 10px 10px; /*margin이 없으면 버튼들끼리 딱달라붙음 evernote정리하기*/
 }
-nav .menu .item .btn:hover {
-  background-color: #f37043;
-}
+
 nav .menu .item .btn.btn2 {
   position: relative;
-  padding: 15px 24px 15px;
 }
-nav .menu .item .btn.btn2:hover {
-  background-color: #f37043;
-}
+
 /* 메뉴 드롭박스 class 를바꿔가며 어찌저찌 하긴했지만
 연습이 많이 필요하다*/
 .item {
+  font-weight: 700;
   cursor: pointer;
   position: relative;
 }
@@ -116,20 +128,25 @@ nav .menu .item .btn.btn2:hover {
 
 .swiper-container {
   display: relative;
+  width: 100%;
+  height: 100%;
 
   overflow: hidden; /*다음 이미지 숨김 */
 }
-
+.swiper-slide {
+}
 .swiper-wrapper {
   position: relative;
-  z-index: -1; /*이미지가 밑에 깔려야 nav의 버튼들이 보임
+  z-index: -1;
+  /*이미지가 밑에 깔려야 nav의 버튼들이 보임
   constainer에 index를 줄 시 페이징 버튼까지 밑에깔려서 작동하지않음.*/
 }
 .swiper-container .swiper-slide > img {
-  display: block;
+  position: relative;
   width: 100%;
   height: 100vh;
-  object-fit: cover; /*img가 inline속성이기때문에 block으로 변경. 사이즈를 컴퓨터 크기에맞게 꽉 채워주기 */
+  object-fit: cover; /* 사이즈를 컴퓨터 크기에맞게 꽉 채워주기 */
+  filter: brightness(70%);
 }
 .swiper-button-next::after,
 .swiper-button-prev::after {
@@ -141,4 +158,114 @@ nav .menu .item .btn.btn2:hover {
 }
 .swiper-button-prev {
   left: 50px;
+}
+.swiper-button-next::after:hover {
+  color: black;
+}
+/*이미지 안 버튼 확대하면 ui다깨짐...*/
+.swiper-slide > h1 {
+  position: absolute;
+  font-size: 78px;
+  top: 55%;
+  left: 30%;
+  font-stretch: condensed;
+  letter-spacing: -10px; /*글자 간격*/
+  font-weight: 500;
+  color: #fff;
+  line-height: 100%;
+}
+.subtitle strong {
+  position: absolute;
+  max-width: 600px;
+  font-size: 30px;
+  bottom: 25%;
+  left: 35%;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  line-height: 1.8;
+}
+.swiper-container .swiper-wrapper .swiper-slide > .btn.btn2 {
+  position: absolute;
+  bottom: 180px;
+  left: 55em;
+  cursor: pointer;
+}
+/*SECTION*/
+.title h2 {
+  text-align: center;
+  font-size: 100px;
+  letter-spacing: -10px; /*글자 간격*/
+  font-weight: 500;
+  margin: 50px 0 50px 0;
+}
+.title h4 {
+  text-align: center;
+  font-size: 30px;
+}
+/*IMAGE GRID*/
+.grid {
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  grid-template-rows: 150px 150px;
+  gap: 30px 30px;
+}
+.explore .image {
+  width: 800px;
+  height: 500px;
+  background-color: #f37043;
+}
+
+.grid .explore:nth-child(1) .image {
+  background-image: url("./img/explore1.jpg");
+  grid-column: 7/13;
+}
+.explore_more .inner .grid .explore:nth-child(2) .image {
+  background-image: url("./img/explore2.jpg");
+}
+.explore_more .inner .grid .explore:nth-child(3) .image {
+  background-image: url("./img/explore3.jpg");
+}
+.explore_more .inner .grid .explore:nth-child(4) .image {
+  background-image: url("./img/explore4.jpg");
+}
+.explore_more .inner .grid .explore:nth-child(5) .image {
+  background-image: url("./img/explore5.jpg");
+}
+
+.grid .explore:nth-child(1) {
+  grid-column: 1 / 14;
+  grid-row: 1/4; /*row가 4번재 줄까지있음.*/
+  overflow: hidden;
+}
+.grid .explore:nth-child(2) {
+  grid-column-start: 7; /*1사진이 끝나는 7번번호에서*/
+  grid-column-end: 14;
+  grid-row: 1 / 4;
+  overflow: hidden;
+}
+.grid .explore:nth-child(3) {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  overflow: hidden;
+}
+.grid .explore:nth-child(4) {
+  grid-column-start: 4;
+  grid-column-end: 9;
+  grid-row-start: 4;
+  overflow: hidden;
+}
+
+.grid .explore:nth-child(5) {
+  grid-column-start: 9;
+  grid-column-end: 14;
+  grid-row-start: 4;
+  overflow: hidden;
+}
+.explore_more .inner .grid .explore:hover .image {
+  transform: scale(1);
+  transition: 0.3s;
+  border: 11px solid #f37043;
+  box-sizing: border-box;
+  overflow: hidden;
 }
