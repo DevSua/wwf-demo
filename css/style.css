@@ -17,6 +17,16 @@ ul {
 img {
   display: block;
 }
+h3 {
+  position: absolute;
+  color: #fff;
+  font-size: 2em;
+  font-weight: 700;
+  bottom: 0;
+  margin: 0 0 70px 50px;
+  letter-spacing: -3px;
+}
+
 nav {
   width: 100%;
   position: fixed;
@@ -141,11 +151,11 @@ nav .menu .item .btn.btn2 {
   /*이미지가 밑에 깔려야 nav의 버튼들이 보임
   constainer에 index를 줄 시 페이징 버튼까지 밑에깔려서 작동하지않음.*/
 }
-.swiper-container .swiper-slide > img {
+.back .swiper-container .swiper-slide > img {
   position: relative;
   width: 100%;
   height: 100vh;
-  object-fit: cover; /* 사이즈를 컴퓨터 크기에맞게 꽉 채워주기 */
+  /* object-fit: cover; 사이즈를 컴퓨터 크기에맞게 꽉 채워주기 */
   filter: brightness(70%);
 }
 .swiper-button-next::after,
@@ -195,7 +205,7 @@ nav .menu .item .btn.btn2 {
   text-align: center;
   font-size: 100px;
   letter-spacing: -10px; /*글자 간격*/
-  font-weight: 500;
+  font-weight: 700;
   margin: 50px 0 50px 0;
 }
 .title h4 {
@@ -212,21 +222,21 @@ nav .menu .item .btn.btn2 {
 }
 
 .grid .explore:nth-child(1) .image {
-  background-image: url("./img/explore1.jpg");
+  background-image: url("../img/explore1.jpg");
 }
 .explore_more .inner .grid .explore:nth-child(2) .image {
-  background-image: url("./img/explore2.jpg");
+  background-image: url("../img/explore2.jpg");
 }
 .explore_more .inner .grid .explore:nth-child(3) .image {
-  background-image: url("./img/explore3.jpg");
+  background-image: url("../img/explore3.jpg");
 }
 .explore_more .inner .grid .explore:nth-child(4) .image {
-  background-image: url("./img/explore4.jpg");
+  background-image: url("../img/explore4.jpg");
 }
 .explore_more .inner .grid .explore:nth-child(5) .image {
-  background-image: url("./img/explore5.jpg");
+  background-image: url("../img/explore5.jpg");
 }
-
+/*반응형 다르게 조절*/
 .grid .explore:nth-child(1) {
   grid-column-start: 1; /*1사진이 끝나는 7번번호에서*/
   grid-column-end: 7;
@@ -248,35 +258,52 @@ nav .menu .item .btn.btn2 {
   grid-column-start: 5;
   grid-column-end: 9;
   grid-row-start: 3;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .grid .explore:nth-child(5) {
   grid-column-start: 9;
   grid-column-end: 13;
   grid-row-start: 3;
-  overflow: hidden;
+  /* overflow: hidden; */
+}
+.grid .explore {
 }
 .explore .image {
   height: 500px;
   position: relative;
-  border: 1px solid transparent;
-}
-.explore_more .inner .grid .explore img:hover {
-  border: 11px solid #f37043;
 }
 .explore_more .inner .grid .explore:hover .image {
-  transform: scale(1.1);
+  transform: scale(1.1, 1.1);
   transition: 0.3s;
+  overflow: visible;
   border: 11px solid #f37043;
   box-sizing: border-box;
 }
-.explore_more .inner .grid .explore h3 {
+
+/*GET INVOLVED*/
+.get_involved .swiper-container {
+  position: relative;
+  width: 100%;
+  height: 700px;
+}
+.get_involved .swiper-wrapper {
+  position: relative;
+  /* position: absolute; */
+}
+.get_involved .swiper-slide {
+  margin: 0 30px; /*상하 0 좌우 10*/
+}
+.get_involved .swiper-slide img {
   position: absolute;
-  color: #fff;
-  font-size: 2em;
-  font-weight: 700;
-  bottom: 0;
-  margin: 0 0 40px 50px;
-  letter-spacing: -3px;
+  width: 600px; /*반응형 다르게 조절*/
+  height: 650px;
+}
+.get_involved .swiper-pagination {
+  position: relative;
+}
+.get_involved .swiper-button-prev,
+.get_involved .swiper-button-next {
+}
+.get_involved .swiper-button-next {
 }
