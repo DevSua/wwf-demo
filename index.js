@@ -13,6 +13,7 @@
 //     prevEl: ".swiper-button-prev",
 //   },
 // });
+
 // const swiper = new Swiper(".get_involved .swiper-container", {
 //   centeredSlides: true,
 //   loopAdditionalSlides: 1, //슬라이드 마지막에서 다음슬라이드가 보여지지않는 현상 수정
@@ -23,7 +24,11 @@
 //     prevEl: ".swiper-button-prev",
 //   },
 // });
-//마우스로 스크롤 할수있게 만들기
+//  마우스로 스크롤 할수있게 만들기
+const scroll = new scroll(".menu"),
+{
+  if(window.scrollX>847)
+}
 
 // 847때쯤에 검은색으로
 //https://www.nextree.co.kr/p8622/ 반응형
