@@ -25,10 +25,14 @@
 //   },
 // });
 //  마우스로 스크롤 할수있게 만들기
-const scroll = new scroll(".menu"),
-{
-  if(window.scrollX>847)
-}
-
-// 847때쯤에 검은색으로
+document.addEventListener("scroll", () => {
+  var nav = document.querySelector("nav");
+  let y = window.scrollY;
+  if (y > 1300) {
+    nav.style.backgroundColor = "black";
+    nav.style.width = "100%";
+  } else {
+    nav.style.backgroundColor = "transparent";
+  }
+});
 //https://www.nextree.co.kr/p8622/ 반응형
