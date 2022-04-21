@@ -1,7 +1,8 @@
 body {
   font-family: "WWFRegular", sans-serif;
+  height: 5000px;
 }
-
+/*이름을 상세하게 설정해주기 grid x , grid_expolore o꼭!!!*/
 a {
   text-decoration: none;
 }
@@ -71,7 +72,6 @@ nav .left .logo {
   top: 0; /*부모의 시작점 끝점을 기준으로 외부여백 자동계산*/
   left: 0;
   bottom: 0;
-
   /*왼쪽과 오른쪽에 딱붙*/
   margin: auto;
 }
@@ -169,9 +169,6 @@ nav .menu .item .btn.btn2 {
 .swiper-button-prev {
   left: 50px;
 }
-.swiper-button-next::after:hover {
-  color: black;
-}
 /*이미지 안 버튼 확대하면 ui다깨짐...*/
 .swiper-slide > h1 {
   position: absolute;
@@ -213,7 +210,7 @@ nav .menu .item .btn.btn2 {
   font-size: 30px;
 }
 /*IMAGE GRID*/
-.grid {
+.grid_explore {
   display: grid;
   grid-template-columns: repeat(12, 1fr); /*13개의 세로 컬럼*/
   grid-template-rows: 100px, 100px;
@@ -221,63 +218,62 @@ nav .menu .item .btn.btn2 {
   /*이부분이 핵심임!!! px크기와 repeat크기에따라 막대기가 달라지며 차지하는 비율도 달라질수있음 더 공부 필요. 중요!!*/
 }
 
-.grid .explore:nth-child(1) .image {
+.grid_explore .explore:nth-child(1) .image {
   background-image: url("../img/explore1.jpg");
 }
-.explore_more .inner .grid .explore:nth-child(2) .image {
+.explore_more .inner .grid_explore .explore:nth-child(2) .image {
   background-image: url("../img/explore2.jpg");
 }
-.explore_more .inner .grid .explore:nth-child(3) .image {
+.explore_more .inner .grid_explore .explore:nth-child(3) .image {
   background-image: url("../img/explore3.jpg");
 }
-.explore_more .inner .grid .explore:nth-child(4) .image {
+.explore_more .inner .grid_explore .explore:nth-child(4) .image {
   background-image: url("../img/explore4.jpg");
 }
-.explore_more .inner .grid .explore:nth-child(5) .image {
+.explore_more .inner .grid_explore .explore:nth-child(5) .image {
   background-image: url("../img/explore5.jpg");
 }
 /*반응형 다르게 조절*/
-.grid .explore:nth-child(1) {
+.grid_explore .explore:nth-child(1) {
   grid-column-start: 1; /*1사진이 끝나는 7번번호에서*/
   grid-column-end: 7;
   overflow: hidden;
 }
-.grid .explore:nth-child(2) {
+.grid_explore .explore:nth-child(2) {
   grid-column-start: 7; /*1사진이 끝나는 7번번호에서*/
   grid-column-end: 13;
   grid-row: 1 / 3; /*1번째 가로줄 부터시작 */
   overflow: hidden;
 }
-.grid .explore:nth-child(3) {
+.grid_explore .explore:nth-child(3) {
   grid-column-start: 1;
   grid-column-end: 5;
   grid-row-start: 3;
   overflow: hidden;
 }
-.grid .explore:nth-child(4) {
+.grid_explore .explore:nth-child(4) {
   grid-column-start: 5;
   grid-column-end: 9;
   grid-row-start: 3;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
-.grid .explore:nth-child(5) {
+.grid_explore .explore:nth-child(5) {
   grid-column-start: 9;
   grid-column-end: 13;
   grid-row-start: 3;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
-.grid .explore {
+.grid_explore .explore {
 }
 .explore .image {
   height: 500px;
   position: relative;
 }
-.explore_more .inner .grid .explore:hover .image {
+.explore_more .inner .grid_explore .explore:hover .image {
   transform: scale(1.1, 1.1);
   transition: 0.3s;
-  overflow: visible;
-  border: 11px solid #f37043;
+  cursor: pointer;
   box-sizing: border-box;
 }
 
@@ -287,23 +283,17 @@ nav .menu .item .btn.btn2 {
   width: 100%;
   height: 700px;
 }
-.get_involved .swiper-wrapper {
+.get_involved .swiper-container .swiper-wrapper {
   position: relative;
   /* position: absolute; */
 }
-.get_involved .swiper-slide {
-  margin: 0 30px; /*상하 0 좌우 10*/
-}
-.get_involved .swiper-slide img {
+
+.get_involved .swiper-slide > img {
   position: absolute;
-  width: 600px; /*반응형 다르게 조절*/
+  width: 600px; /*반응형 다르게 조절 */
   height: 650px;
 }
-.get_involved .swiper-pagination {
-  position: relative;
-}
-.get_involved .swiper-button-prev,
-.get_involved .swiper-button-next {
-}
-.get_involved .swiper-button-next {
+.get_involved .swiper-slide > img:hover {
+  border: 11px solid #000;
+  cursor: pointer; /*img태그를 사용하니 div 백그라운드로 했을때와달리 hover선택이안됨*/
 }
