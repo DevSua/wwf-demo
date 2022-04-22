@@ -21,7 +21,12 @@ new Swiper(".get_involved .swiper-container", {
   loopAdditionalSlides: 1, //슬라이드 마지막에서 다음슬라이드가 보여지지않는 현상 수정
   slidesPerView: 5,
   spaceBetween: 500,
+  mousewheel: true,
   loop: true,
+  debugger: true,
+  pagination: {
+    clickable: true,
+  },
   navigation: {
     nextEl: ".get_involved .swiper-button-next",
     prevEl: ".get_involved .swiper-button-prev",
