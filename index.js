@@ -4,7 +4,9 @@ new Swiper(".back .swiper-container", {
   loopAdditionalSlides: 1, //슬라이드 마지막에서 다음슬라이드가 보여지지않는 현상 수정
   slidesPerView: 1,
   centeredSlides: true,
-  effect: "fade",
+  //  넘길때 fade효과 주고싶을시
+  //  effect: "fade",
+  // fade: { crossFade: true },
   loop: true,
   autoplay: {
     delay: 5000,
@@ -23,16 +25,11 @@ new Swiper(".get_involved .swiper-container", {
   spaceBetween: 500,
   mousewheel: true,
   loop: true,
-  debugger: true,
-  pagination: {
-    clickable: true,
-  },
   navigation: {
     nextEl: ".get_involved .swiper-button-next",
     prevEl: ".get_involved .swiper-button-prev",
   },
 });
-//  마우스로 스크롤 할수있게 만들기
 document.addEventListener("scroll", () => {
   var nav = document.querySelector("nav");
   let y = window.scrollY;

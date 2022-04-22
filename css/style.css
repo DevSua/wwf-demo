@@ -54,7 +54,6 @@ nav > .inner {
   text-align: center;
   box-sizing: border-box;
   position: relative;
-  padding: 15px 24px 15px;
   color: #fff;
   cursor: pointer;
 }
@@ -97,7 +96,7 @@ nav .menu .item:hover .item_name {
 
 nav .menu .item .btn {
   padding: 15px 24px 15px;
-  margin: 10px 10px 10px 10px; /*margin이 없으면 버튼들끼리 딱달라붙음 evernote정리하기*/
+  margin: 10px 0 10px 10px; /*margin이 없으면 버튼들끼리 딱달라붙음 evernote정리하기*/
 }
 
 nav .menu .item .btn.btn2 {
@@ -142,8 +141,6 @@ nav .menu .item .btn.btn2 {
   height: 100%;
 
   overflow: hidden; /*다음 이미지 숨김 */
-}
-.swiper-slide {
 }
 .swiper-wrapper {
   position: relative;
@@ -193,8 +190,6 @@ nav .menu .item .btn.btn2 {
 }
 .swiper-container .swiper-wrapper .swiper-slide > .btn.btn2 {
   position: absolute;
-  bottom: 180px;
-  left: 55em;
   cursor: pointer;
 }
 /*SECTION*/
@@ -218,7 +213,7 @@ nav .menu .item .btn.btn2 {
   /*이부분이 핵심임!!! px크기와 repeat크기에따라 막대기가 달라지며 차지하는 비율도 달라질수있음 더 공부 필요. 중요!!*/
 }
 
-.grid_explore .explore:nth-child(1) .image {
+.explore_more .inner .grid_explore .explore:nth-child(1) .image {
   background-image: url("../img/explore1.jpg");
 }
 .explore_more .inner .grid_explore .explore:nth-child(2) .image {
@@ -262,19 +257,17 @@ nav .menu .item .btn.btn2 {
   grid-column-start: 9;
   grid-column-end: 13;
   grid-row-start: 3;
-  overflow: hidden;
-}
-.grid_explore .explore {
+  /* overflow: hidden; */
 }
 .explore .image {
   height: 500px;
   position: relative;
 }
-.explore_more .inner .grid_explore .explore:hover .image {
-  transform: scale(1.1, 1.1);
-  transition: 0.3s;
+.explore_more .inner .grid_explore .explore .image:hover {
   cursor: pointer;
   box-sizing: border-box;
+  border: 11px solid #f37043;
+  transition: all 0.3s ease-in-out; /*부드러운 전환*/
 }
 
 /*GET INVOLVED*/
@@ -296,4 +289,101 @@ nav .menu .item .btn.btn2 {
 .get_involved .swiper-slide > img:hover {
   border: 11px solid #000;
   cursor: pointer; /*img태그를 사용하니 div 백그라운드로 했을때와달리 hover선택이안됨*/
+}
+/*WWF-AUSTRALIA*/
+.wwf-action {
+  height: 800px;
+}
+.flex_wwf {
+  display: flex;
+}
+.wwf-action .inner .flex_wwf .action .image {
+  height: 400px;
+  width: 400px;
+  margin: 13px;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out; /*부드럽게전환*/
+  cursor: pointer;
+}
+.wwf-action .inner .flex_wwf .action .image:hover {
+  border: 11px solid #f37043;
+  box-sizing: border-box;
+}
+.wwf-action .inner .flex_wwf .action:first-child .image {
+  background-image: url("../img/action1.jpg");
+}
+.wwf-action .inner .flex_wwf .action:nth-child(2) .image {
+  background-image: url("../img/action2.jpg");
+}
+.wwf-action .inner .flex_wwf .action:nth-child(3) .image {
+  background-image: url("../img/action3.jpg");
+}
+.wwf-action .inner .flex_wwf .action:nth-child(4) .image {
+  background-image: url("../img/action4.jpg");
+}
+.wwf-action .inner .flex_wwf .action:last-child {
+  background-image: url("../img/action5.jpg");
+}
+
+/*TURTLE SECTION*/
+.turtle {
+  background-color: #131211;
+  margin: 0 20px; /*상하 0 좌우 20*/
+  height: 800px;
+}
+.turtle .inner .grid_turtle {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /*13개의 세로 컬럼*/
+  gap: 50px;
+}
+.turtle .inner .grid_turtle .turtle_left {
+  width: 450px;
+  padding: 80px 0 0 0;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+.turtle .inner .grid_turtle .turtle_left .bar {
+  background-color: #f37043;
+  content: "";
+  width: 100px;
+  height: 10px;
+}
+.turtle .inner .grid_turtle .turtle_left > h2 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 53px;
+  letter-spacing: -4px;
+  line-height: 1.4;
+  padding: 50px 30px 0 0;
+}
+.turtle .inner .grid_turtle .turtle_picture {
+  grid-column: span 8;
+  grid-column-end: auto;
+  width: 1100px;
+  height: 600px;
+  overflow: hidden;
+  margin-top: calc(-7 * 10px);
+  /*(600-70)비율에 따라 다르게 나타내기위해 calc사용 */
+  border: 18px solid #fff;
+  /* 버튼이랑 일직선상이되게 calc사용시 음수값이 안먹음 */
+}
+.turtle .inner .grid_turtle .turtle_picture img {
+  width: 1100px;
+  height: 600px;
+  /*div태그와 img태그 크기가 달라서  남는부분이 background 로 칠해짐. 차이를 맞추기위해 사이즈조정*/
+}
+.turtle .inner .grid_turtle .topic {
+  display: flex;
+  grid-column: span 4;
+  gap: 20px;
+  align-items: center;
+}
+.turtle .inner .grid_turtle .topic img {
+  width: 100px;
+}
+.turtle .inner .grid_turtle .topic h4 {
+  color: #f37043;
+  line-height: 1.4;
+  font-size: 1.5em;
+  font-weight: 700;
 }
