@@ -5,8 +5,8 @@ body {
 /*이름을 상세하게 설정해주기 grid x , grid_expolore o꼭!!!*/
 a {
   text-decoration: none;
+  color: #000;
 }
-
 .inner {
   width: 1700px;
   position: relative;
@@ -387,3 +387,118 @@ nav .menu .item .btn.btn2 {
   font-size: 1.5em;
   font-weight: 700;
 }
+/* SUBSCRIBE */
+.get-update {
+  background-color: #131211;
+  margin: 50px 20px;
+  height: 200px;
+}
+.get-update .inner .sub-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  /*13개의 세로 컬럼*/
+  padding: 80px 0;
+}
+.get-update .inner .sub-grid .update {
+  display: flex;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  color: #fff;
+  font-size: 1.7em;
+  font-weight: 700;
+  letter-spacing: -3px;
+  align-items: center;
+}
+.get-update .inner .sub-grid .put-adress {
+  display: flex;
+  grid-column-start: 3;
+  grid-column-end: 7;
+}
+.get-update .inner .sub-grid .put-adress .adress {
+  width: 300px;
+  height: 40px;
+  border-radius: 4px 0 0 4px;
+  font-size: 20px;
+}
+.get-update .inner .sub-grid .put-adress .btn.btn2 {
+  border-radius: 0px 4px 4px 0;
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-size: 20px;
+}
+
+.get-update .inner .sub-grid .text {
+  grid-column-start: 8;
+  grid-column-end: 12;
+  color: #fff;
+  width: 590px;
+  height: 40px;
+  font-size: 25px;
+}
+/* FOOTER > INFO */
+footer {
+}
+.info {
+}
+.info .inner {
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #808080;
+}
+.info .inner .link_grid {
+  margin: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.info .inner .link_explain {
+  grid-column-start: 1;
+  grid-column-end: 8;
+}
+.info .inner .link_explain .links {
+  font-weight: 700;
+  font-size: 20px;
+  color: #000;
+}
+.info .inner .link_explain .links > a {
+  margin: 0 20px;
+  letter-spacing: -2px;
+  text-decoration: none;
+}
+.info .inner .link_explain .links a:first-child::before {
+  display: block;
+  content: "";
+}
+/*첫번째 자식은 margin 방지. before는 inline속성이라 blick으로 의도적으로 바꿔줌.*/
+p {
+  width: 950px;
+}
+.info .inner .link_grid .contact {
+  grid-column-start: 8;
+  grid-column-end: 12;
+  display: flex;
+}
+.info .inner .bar {
+  content: "";
+  width: 4px;
+  height: 110px;
+  background-color: #f37043;
+}
+.info .inner .more_info {
+  margin-left: 30px;
+}
+.info .inner .help {
+  font-weight: 600;
+  font-size: 30px;
+}
+.info .inner .telephone {
+  line-height: 1.7;
+  font-weight: 600;
+  font-size: 30px;
+}
+.info .inner .time {
+  line-height: 1.7;
+}
+/* FOOTER > SNS */
