@@ -2,6 +2,8 @@
 호주 WWF demo입니다.
 제작기간 : 17일
 
++07.07 grid부분 image crop 추가
+
 주소 : [wwfdemo.netlify.app](https://wwfdemo.netlify.app/)
 
 # STACK
